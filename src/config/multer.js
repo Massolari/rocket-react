@@ -1,6 +1,6 @@
 const multer = require('multer');
-const path = require('path')
-const crypto = require('crypto')
+const path = require('path');
+const crypto = require('crypto');
 
 const destFolder = path.resolve(__dirname, '..', '..', 'tmp');
 
