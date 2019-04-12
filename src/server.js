@@ -1,6 +1,7 @@
 console.log('Starting server...');
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const routes = require('./routes');
 const port = 8000;
 
@@ -11,6 +12,7 @@ mongoose.connect('mongodb+srv://massolari:massolari@rocket-react-ecgmd.mongodb.n
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/file', express.static(path.resolve(__dirname, '..', 'tmp')));
 app.use(routes);
 
 app.listen(port);
